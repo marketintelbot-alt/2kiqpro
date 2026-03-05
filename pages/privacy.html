@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | 2K IQ Lab</title>
+  <meta name="description" content="Privacy policy for 2K IQ Lab, covering local browser storage, analytics assumptions, and ad placeholders." />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/index.html"><img src="/assets/logo.svg" alt="2K IQ Lab logo" width="34" height="34" /><span>2K IQ Lab</span></a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/index.html#tool-teammate">Tools</a>
+        <a href="/index.html#pricing">Pricing</a>
+        <a href="/pages/faq.html">FAQ</a>
+        <a href="/pages/about.html">About</a>
+      </nav>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">Theme</button>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 2rem 0;">
+    <article class="card">
+      <h1>Privacy Policy</h1>
+      <p><strong>Effective date:</strong> March 5, 2026</p>
+      <p>2K IQ Lab is designed as a static website. We do not require account creation and we do not operate a custom backend for report processing in this version. Most of your interactions remain in your browser session.</p>
+      <h2>Information We Process</h2>
+      <p>When you use the tools, the values you enter (for example ratings, percentages, and role choices) are processed in browser JavaScript to produce report cards. These values are not sent to a custom 2K IQ Lab server in this static build.</p>
+      <h2>Local Storage</h2>
+      <p>To improve your experience, we store limited preferences in localStorage, such as dark mode selection, Pro unlock state, and saved Pro loadouts. This data lives on your device/browser and can be removed by clearing site storage.</p>
+      <h2>Payments</h2>
+      <p>Payments are processed through Stripe links opened in a new tab. We do not collect or store card details on this website. Because this site is static, Pro status is stored locally on your device and is not server-verified.</p>
+      <h2>Advertising</h2>
+      <p>Free mode includes placeholder areas intended for Google AdSense integration. Once AdSense is enabled, Google may collect data according to its own privacy terms. You should review Google policies for details about ad personalization and cookies.</p>
+      <h2>Your Choices</h2>
+      <p>You may use the tools without entering personal identity details. You can disable local storage by clearing browser data, and you can choose not to unlock Pro if you prefer ad-supported free access.</p>
+      <p class="tiny-note">Not affiliated with 2K or Take-Two. Educational tool. Results are estimates.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><p><strong>2K IQ Lab</strong></p><p>Static by design. Fast by default.</p></div>
+      <nav aria-label="Footer">
+        <a href="/pages/contact.html">Contact</a>
+        <a href="/pages/terms.html">Terms</a>
+        <a href="/pages/faq.html">FAQ</a>
+      </nav>
+    </div>
+    <div class="container"><p class="copyright">© <span id="year"></span> 2K IQ Lab.</p></div>
+  </footer>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

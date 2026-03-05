@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | 2K IQ Lab</title>
+  <meta name="description" content="Frequently asked questions about 2K IQ Lab features, Pro unlock, ads, privacy, and static tool accuracy." />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="/index.html"><img src="/assets/logo.svg" alt="2K IQ Lab logo" width="34" height="34" /><span>2K IQ Lab</span></a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="/index.html#tool-teammate">Tools</a>
+        <a href="/index.html#pricing">Pricing</a>
+        <a href="/pages/faq.html" aria-current="page">FAQ</a>
+        <a href="/pages/about.html">About</a>
+      </nav>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">Theme</button>
+    </div>
+  </header>
+
+  <main class="container" style="padding: 2rem 0;">
+    <article class="card">
+      <h1>Frequently Asked Questions</h1>
+      <h2>What is 2K IQ Lab?</h2>
+      <p>2K IQ Lab is a static browser toolkit that helps players evaluate teammates, identify loss causes, plan build counters, optimize animation choices, and improve lineup chemistry.</p>
+
+      <h2>How accurate are the reports?</h2>
+      <p>Reports use heuristic logic based on the inputs you provide. They are directional estimates, not guaranteed outcomes. The goal is to improve decision quality quickly, not to predict every game perfectly.</p>
+
+      <h2>Do I need an account?</h2>
+      <p>No. This version is fully static and runs in your browser. There is no required login flow and no custom backend processing for report generation.</p>
+
+      <h2>How does Pro work?</h2>
+      <p>Pro is unlocked from a Stripe payment link at $2.99/month in this setup. After payment, selecting “I’ve Paid — Unlock Pro” stores unlock state in localStorage on your current browser/device.</p>
+
+      <h2>Why are ads still showing after I pay?</h2>
+      <p>If ads continue to appear, make sure Pro unlock is active on the same browser where payment was completed. Because this is static-only, changing devices or clearing browser storage can remove local unlock state.</p>
+
+      <h2>Can I share reports with teammates?</h2>
+      <p>Yes. Free users can copy a text summary. Pro users can export a visual share card and copy a URL containing encoded summary data for easy sharing.</p>
+
+      <h2>Will you add live 2K data integrations?</h2>
+      <p>Current tools use curated data and logic-based recommendations. If live integrations become available and reliable, they may be added in future versions.</p>
+
+      <h2>Is this affiliated with NBA 2K or Take-Two?</h2>
+      <p>No. 2K IQ Lab is independent and not affiliated with 2K or Take-Two. It is an educational decision-support tool.</p>
+
+      <h2>Can I use this on mobile?</h2>
+      <p>Yes. The site is mobile-first responsive and designed to work on modern phone, tablet, and desktop browsers.</p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><p><strong>2K IQ Lab</strong></p><p>Questions answered. Tools ready.</p></div>
+      <nav aria-label="Footer">
+        <a href="/pages/contact.html">Contact</a>
+        <a href="/pages/privacy.html">Privacy</a>
+        <a href="/pages/terms.html">Terms</a>
+      </nav>
+    </div>
+    <div class="container"><p class="copyright">© <span id="year"></span> 2K IQ Lab.</p></div>
+  </footer>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>

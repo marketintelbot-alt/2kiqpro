@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2K IQ Lab | Scan Teammates, Fix Losses, Build Better Squads</title>
+  <meta name="description" content="2K IQ Lab is a static toolkit for 2K players: teammate toxicity scans, loss analysis, counter plans, animation loadouts, and squad chemistry checks." />
+  <meta name="keywords" content="2K IQ Lab, teammate scanner, toxicity scanner, why you're losing analyzer, 2K build counter, animation optimizer, squad chemistry" />
+  <meta property="og:title" content="2K IQ Lab" />
+  <meta property="og:description" content="Before you run park with someone... scan them." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#f5f5f7" />
+  <link rel="icon" type="image/svg+xml" href="/assets/logo.svg" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="/index.html" aria-label="2K IQ Lab home">
+        <img src="/assets/logo.svg" alt="2K IQ Lab logo" width="34" height="34" />
+        <span>2K IQ Lab</span>
+      </a>
+      <nav class="main-nav" aria-label="Main">
+        <details class="tools-menu">
+          <summary>Tools</summary>
+          <ul>
+            <li><a href="#tool-teammate">Teammate IQ Scanner</a></li>
+            <li><a href="#tool-losing">Why You’re Losing Analyzer</a></li>
+            <li><a href="#tool-counter">Build Counter Bot</a></li>
+            <li><a href="#tool-animation">Animation Optimizer</a></li>
+            <li><a href="#tool-chemistry">Squad Chemistry Bot</a></li>
+          </ul>
+        </details>
+        <a href="#pricing">Pricing</a>
+        <a href="/pages/faq.html">FAQ</a>
+        <a href="/pages/about.html">About</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">Theme</button>
+        <button class="secondary-btn open-pro-modal" type="button">Unlock Pro</button>
+        <span class="pro-state" id="pro-state">Free Mode</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero reveal">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Before you run park with someone... scan them.</p>
+          <h1>2K IQ Lab turns frustration into a game plan.</h1>
+          <p class="hero-sub">Five focused tools to evaluate teammates, diagnose losses, counter builds, optimize animations, and balance your squad in under a minute.</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#tool-teammate">Scan Teammate</a>
+            <button class="secondary-btn open-pro-modal" type="button">Unlock Pro</button>
+          </div>
+          <p class="tiny-note">Not affiliated with 2K or Take-Two. Educational tool. Results are estimates.</p>
+        </div>
+        <aside class="hero-panel card">
+          <h2>Fast Reality Check</h2>
+          <p>Find out why you keep losing in 10 seconds.</p>
+          <ul>
+            <li>Input your stats</li>
+            <li>Get ranked causes</li>
+            <li>Apply fixes and drills</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="container reveal">
+      <div class="ad-slot" aria-label="Ad slot near hero">Ad slot (Google AdSense placement)</div>
+    </section>
+
+    <section class="share-preview-section reveal" aria-live="polite">
+      <div class="container">
+        <h2>Share Card Preview</h2>
+        <div class="share-preview card" id="share-preview">
+          <p>Run any tool to generate a share-ready summary preview.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pricing reveal" id="pricing">
+      <div class="container">
+        <h2>Simple Pricing</h2>
+        <p class="section-sub">Use Free mode with ads, then upgrade when you want deeper outputs and power-share tools.</p>
+        <div class="pricing-grid">
+          <article class="price-card card">
+            <h3>Free Mode</h3>
+            <p class="price">$0</p>
+            <ul>
+              <li>All 5 tools available</li>
+              <li>Core scoring + recommendations</li>
+              <li>Copy-to-clipboard summary sharing</li>
+              <li>Google AdSense-supported experience</li>
+            </ul>
+          </article>
+          <article class="price-card card pro-highlight">
+            <h3>Pro Mode</h3>
+            <p class="price">$2.99<span>/month</span></p>
+            <ul>
+              <li>Ad-free experience</li>
+              <li>More detailed, personalized outputs</li>
+              <li>Downloadable image share cards</li>
+              <li>Advanced exports, routines, save/compare tools</li>
+            </ul>
+            <button class="primary-btn open-pro-modal" type="button">Unlock Pro</button>
+          </article>
+        </div>
+        <p class="tiny-note" id="pro-storage-note">Pro unlock stored on this device/browser.</p>
+      </div>
+    </section>
+
+    <section class="tool-section reveal" id="tool-teammate">
+      <div class="container">
+        <article class="tool card">
+          <div class="tool-head">
+            <h2>1) Teammate IQ / Toxicity Scanner</h2>
+            <p>Estimate ball-hog behavior, passing awareness, and seller risk before you commit to a run.</p>
+          </div>
+          <div class="tool-help">
+            <h3>How to use</h3>
+            <ol>
+              <li>Pick platform and role.</li>
+              <li>Add at least a few stats for better accuracy.</li>
+              <li>Run scan and review verdict: RUN IT, RISKY, or AVOID.</li>
+            </ol>
+          </div>
+          <form id="teammate-form" class="tool-form" novalidate>
+            <div class="input-grid three-col">
+              <label>Platform
+                <select name="platform" required>
+                  <option value="">Choose...</option>
+                  <option>PlayStation</option>
+                  <option>Xbox</option>
+                  <option>PC</option>
+                </select>
+              </label>
+              <label>Role
+                <select name="role" required>
+                  <option value="">Choose...</option>
+                  <option>Guard</option>
+                  <option>Wing</option>
+                  <option>Big</option>
+                </select>
+              </label>
+              <label>Teammate Grade
+                <select name="grade">
+                  <option value="">Not sure</option>
+                  <option>A+</option><option>A</option><option>A-</option>
+                  <option>B+</option><option>B</option><option>B-</option>
+                  <option>C+</option><option>C</option><option>C-</option>
+                  <option>D+</option><option>D</option><option>D-</option>
+                  <option>F</option>
+                </select>
+              </label>
+              <label>Win %
+                <input type="number" name="winPct" min="0" max="100" inputmode="decimal" placeholder="0-100" />
+              </label>
+              <label>Avg Points
+                <input type="number" name="points" min="0" max="100" inputmode="decimal" placeholder="e.g. 18" />
+              </label>
+              <label>Avg Assists
+                <input type="number" name="assists" min="0" max="30" inputmode="decimal" placeholder="e.g. 5" />
+              </label>
+              <label>Avg Turnovers
+                <input type="number" name="turnovers" min="0" max="20" inputmode="decimal" placeholder="e.g. 2" />
+              </label>
+              <label>Avg Rebounds
+                <input type="number" name="rebounds" min="0" max="30" inputmode="decimal" placeholder="e.g. 6" />
+              </label>
+              <label>Quit Rate %
+                <input type="number" name="quitRate" min="0" max="100" inputmode="decimal" placeholder="0-100" />
+              </label>
+              <label>Shot %
+                <input type="number" name="shotPct" min="0" max="100" inputmode="decimal" placeholder="0-100" />
+              </label>
+              <label>3PT %
+                <input type="number" name="threePct" min="0" max="100" inputmode="decimal" placeholder="0-100" />
+              </label>
+            </div>
+            <div class="tool-actions">
+              <button class="primary-btn" type="submit">Analyze Teammate</button>
+              <button class="secondary-btn" type="button" data-reset-form="teammate-form" data-report-target="teammate-report" data-pro-target="teammate-pro">Reset</button>
+            </div>
+          </form>
+          <div class="report-card empty" id="teammate-report">Run a teammate scan to generate a report card.</div>
+          <div class="pro-extra" id="teammate-pro"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tool-section reveal" id="tool-losing">
+      <div class="container">
+        <article class="tool card">
+          <div class="tool-head">
+            <h2>2) “Why You’re Losing” Analyzer</h2>
+            <p>Compare your team vs opponent and rank the biggest reasons your games are slipping away.</p>
+          </div>
+          <div class="tool-help">
+            <h3>How to use</h3>
+            <ol>
+              <li>Enter any stats you have for both teams.</li>
+              <li>Submit to get ranked loss causes.</li>
+              <li>Follow targeted fixes and drills for next run.</li>
+            </ol>
+          </div>
+          <form id="losing-form" class="tool-form" novalidate>
+            <div class="two-blocks">
+              <fieldset>
+                <legend>Your Team</legend>
+                <div class="input-grid two-col">
+                  <label>FG %<input type="number" name="teamFg" min="0" max="100" placeholder="0-100" /></label>
+                  <label>3PT %<input type="number" name="team3" min="0" max="100" placeholder="0-100" /></label>
+                  <label>Turnovers<input type="number" name="teamTov" min="0" max="40" placeholder="e.g. 12" /></label>
+                  <label>Off Reb<input type="number" name="teamOrb" min="0" max="40" placeholder="e.g. 8" /></label>
+                  <label>Def Reb<input type="number" name="teamDrb" min="0" max="60" placeholder="e.g. 21" /></label>
+                  <label>Fouls<input type="number" name="teamFouls" min="0" max="40" placeholder="e.g. 10" /></label>
+                  <label>Fastbreak Pts<input type="number" name="teamFb" min="0" max="80" placeholder="e.g. 14" /></label>
+                </div>
+              </fieldset>
+              <fieldset>
+                <legend>Opponent</legend>
+                <div class="input-grid two-col">
+                  <label>FG %<input type="number" name="oppFg" min="0" max="100" placeholder="0-100" /></label>
+                  <label>3PT %<input type="number" name="opp3" min="0" max="100" placeholder="0-100" /></label>
+                  <label>Turnovers<input type="number" name="oppTov" min="0" max="40" placeholder="e.g. 8" /></label>
+                  <label>Off Reb<input type="number" name="oppOrb" min="0" max="40" placeholder="e.g. 11" /></label>
+                  <label>Def Reb<input type="number" name="oppDrb" min="0" max="60" placeholder="e.g. 25" /></label>
+                  <label>Fouls<input type="number" name="oppFouls" min="0" max="40" placeholder="e.g. 7" /></label>
+                  <label>Fastbreak Pts<input type="number" name="oppFb" min="0" max="80" placeholder="e.g. 19" /></label>
+                </div>
+              </fieldset>
+            </div>
+            <div class="tool-actions">
+              <button class="primary-btn" type="submit">Find Loss Causes</button>
+              <button class="secondary-btn" type="button" data-reset-form="losing-form" data-report-target="losing-report" data-pro-target="losing-pro">Reset</button>
+            </div>
+          </form>
+          <div class="report-card empty" id="losing-report">Compare team stats to see likely loss causes.</div>
+          <div class="pro-extra" id="losing-pro"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="container reveal">
+      <div class="ad-slot" aria-label="Ad slot between tools">Ad slot (Google AdSense placement)</div>
+    </section>
+
+    <section class="tool-section reveal" id="tool-counter">
+      <div class="container">
+        <article class="tool card">
+          <div class="tool-head">
+            <h2>3) Build Counter Bot</h2>
+            <p>Get instant counter tactics against popular archetypes and primary threats.</p>
+          </div>
+          <div class="tool-help">
+            <h3>How to use</h3>
+            <ol>
+              <li>Enter opponent archetype and key threat.</li>
+              <li>Confirm if they rely on pick-and-roll.</li>
+              <li>Apply the role-specific matchup plan.</li>
+            </ol>
+          </div>
+          <form id="counter-form" class="tool-form" novalidate>
+            <div class="input-grid two-col">
+              <label>Opponent Build Archetype
+                <input type="text" name="archetype" maxlength="80" placeholder="e.g. Shot-Creating 3-Level Threat" required />
+              </label>
+              <label>Height Range
+                <select name="heightRange" required>
+                  <option value="">Choose...</option>
+                  <option>Under 6'3"</option>
+                  <option>6'4" - 6'7"</option>
+                  <option>6'8" - 6'10"</option>
+                  <option>6'11" and above</option>
+                </select>
+              </label>
+              <label>Primary Threat
+                <select name="threat" required>
+                  <option value="">Choose...</option>
+                  <option value="shooting">Shooting</option>
+                  <option value="finishing">Finishing</option>
+                  <option value="playmaking">Playmaking</option>
+                  <option value="defense">Defense</option>
+                </select>
+              </label>
+              <label>Runs Pick-and-Roll?
+                <select name="pnr" required>
+                  <option value="">Choose...</option>
+                  <option value="yes">Yes</option>
+                  <option value="no">No</option>
+                </select>
+              </label>
+            </div>
+            <div class="tool-actions">
+              <button class="primary-btn" type="submit">Generate Counter Plan</button>
+              <button class="secondary-btn" type="button" data-reset-form="counter-form" data-report-target="counter-report" data-pro-target="counter-pro">Reset</button>
+            </div>
+          </form>
+          <div class="report-card empty" id="counter-report">Add matchup details to produce your counter game plan.</div>
+          <div class="pro-extra" id="counter-pro"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tool-section reveal" id="tool-animation">
+      <div class="container">
+        <article class="tool card">
+          <div class="tool-head">
+            <h2>4) Animation Optimizer</h2>
+            <p>Get curated animation loadouts based on ratings and playstyle tags.</p>
+          </div>
+          <div class="tool-help">
+            <h3>How to use</h3>
+            <ol>
+              <li>Enter build ratings and select playstyle tags.</li>
+              <li>Generate a logic-based loadout recommendation.</li>
+              <li>Pro users can save multiple loadouts and compare.</li>
+            </ol>
+          </div>
+          <form id="animation-form" class="tool-form" novalidate>
+            <div class="input-grid two-col">
+              <label>Height (inches)
+                <input type="number" name="height" min="60" max="90" placeholder="e.g. 78" required />
+              </label>
+              <label>Ball Handle Rating
+                <input type="number" name="ballHandle" min="25" max="99" placeholder="25-99" required />
+              </label>
+              <label>3PT Rating
+                <input type="number" name="threeRating" min="25" max="99" placeholder="25-99" required />
+              </label>
+              <label>Driving Dunk Rating
+                <input type="number" name="dunkRating" min="25" max="99" placeholder="25-99" required />
+              </label>
+            </div>
+            <fieldset>
+              <legend>Playstyle Tags</legend>
+              <div class="checkbox-row">
+                <label><input type="checkbox" name="playstyle" value="quick stop" /> Quick Stop</label>
+                <label><input type="checkbox" name="playstyle" value="rim run" /> Rim Run</label>
+                <label><input type="checkbox" name="playstyle" value="iso" /> Iso</label>
+                <label><input type="checkbox" name="playstyle" value="spot up" /> Spot Up</label>
+                <label><input type="checkbox" name="playstyle" value="lock" /> Lock</label>
+              </div>
+            </fieldset>
+            <div class="tool-actions">
+              <button class="primary-btn" type="submit">Optimize Animations</button>
+              <button class="secondary-btn" type="button" data-reset-form="animation-form" data-report-target="animation-report" data-pro-target="animation-pro">Reset</button>
+            </div>
+          </form>
+          <div class="report-card empty" id="animation-report">Generate your loadout recommendation.</div>
+          <div class="pro-extra" id="animation-pro">
+            <div class="pro-lock-message">Pro feature: save multiple loadouts and compare.</div>
+            <div class="pro-loadout-tools">
+              <button class="secondary-btn" id="save-loadout-btn" type="button">Save Current Loadout</button>
+              <div class="compare-row">
+                <select id="loadout-a" aria-label="Loadout A"></select>
+                <select id="loadout-b" aria-label="Loadout B"></select>
+                <button class="secondary-btn" id="compare-loadouts-btn" type="button">Compare</button>
+              </div>
+              <div id="loadout-compare-output" class="mini-output"></div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="tool-section reveal" id="tool-chemistry">
+      <div class="container">
+        <article class="tool card">
+          <div class="tool-head">
+            <h2>5) Squad Chemistry Bot</h2>
+            <p>Check team balance, missing roles, and the highest-value lineup adjustments.</p>
+          </div>
+          <div class="tool-help">
+            <h3>How to use</h3>
+            <ol>
+              <li>Add up to five players with role and style.</li>
+              <li>Include ratings if available for better role detection.</li>
+              <li>Apply the recommended changes before your next session.</li>
+            </ol>
+          </div>
+          <form id="chemistry-form" class="tool-form" novalidate>
+            <div class="player-grid">
+              <div class="player-card"><h3>Player 1</h3><label>Role<select name="p1Role"><option value="">Choose...</option><option>Guard</option><option>Wing</option><option>Big</option></select></label><label>Style<select name="p1Style"><option value="">Choose...</option><option>creator</option><option>shooter</option><option>lock</option><option>slasher</option><option>glass</option></select></label><label>3PT<input type="number" name="p13pt" min="25" max="99" /></label><label>Perimeter D<input type="number" name="p1PerD" min="25" max="99" /></label><label>Interior D<input type="number" name="p1IntD" min="25" max="99" /></label><label>Rebounding<input type="number" name="p1Reb" min="25" max="99" /></label><label>Playmaking<input type="number" name="p1Play" min="25" max="99" /></label></div>
+              <div class="player-card"><h3>Player 2</h3><label>Role<select name="p2Role"><option value="">Choose...</option><option>Guard</option><option>Wing</option><option>Big</option></select></label><label>Style<select name="p2Style"><option value="">Choose...</option><option>creator</option><option>shooter</option><option>lock</option><option>slasher</option><option>glass</option></select></label><label>3PT<input type="number" name="p23pt" min="25" max="99" /></label><label>Perimeter D<input type="number" name="p2PerD" min="25" max="99" /></label><label>Interior D<input type="number" name="p2IntD" min="25" max="99" /></label><label>Rebounding<input type="number" name="p2Reb" min="25" max="99" /></label><label>Playmaking<input type="number" name="p2Play" min="25" max="99" /></label></div>
+              <div class="player-card"><h3>Player 3</h3><label>Role<select name="p3Role"><option value="">Choose...</option><option>Guard</option><option>Wing</option><option>Big</option></select></label><label>Style<select name="p3Style"><option value="">Choose...</option><option>creator</option><option>shooter</option><option>lock</option><option>slasher</option><option>glass</option></select></label><label>3PT<input type="number" name="p33pt" min="25" max="99" /></label><label>Perimeter D<input type="number" name="p3PerD" min="25" max="99" /></label><label>Interior D<input type="number" name="p3IntD" min="25" max="99" /></label><label>Rebounding<input type="number" name="p3Reb" min="25" max="99" /></label><label>Playmaking<input type="number" name="p3Play" min="25" max="99" /></label></div>
+              <div class="player-card"><h3>Player 4</h3><label>Role<select name="p4Role"><option value="">Choose...</option><option>Guard</option><option>Wing</option><option>Big</option></select></label><label>Style<select name="p4Style"><option value="">Choose...</option><option>creator</option><option>shooter</option><option>lock</option><option>slasher</option><option>glass</option></select></label><label>3PT<input type="number" name="p43pt" min="25" max="99" /></label><label>Perimeter D<input type="number" name="p4PerD" min="25" max="99" /></label><label>Interior D<input type="number" name="p4IntD" min="25" max="99" /></label><label>Rebounding<input type="number" name="p4Reb" min="25" max="99" /></label><label>Playmaking<input type="number" name="p4Play" min="25" max="99" /></label></div>
+              <div class="player-card"><h3>Player 5</h3><label>Role<select name="p5Role"><option value="">Choose...</option><option>Guard</option><option>Wing</option><option>Big</option></select></label><label>Style<select name="p5Style"><option value="">Choose...</option><option>creator</option><option>shooter</option><option>lock</option><option>slasher</option><option>glass</option></select></label><label>3PT<input type="number" name="p53pt" min="25" max="99" /></label><label>Perimeter D<input type="number" name="p5PerD" min="25" max="99" /></label><label>Interior D<input type="number" name="p5IntD" min="25" max="99" /></label><label>Rebounding<input type="number" name="p5Reb" min="25" max="99" /></label><label>Playmaking<input type="number" name="p5Play" min="25" max="99" /></label></div>
+            </div>
+            <div class="tool-actions">
+              <button class="primary-btn" type="submit">Evaluate Chemistry</button>
+              <button class="secondary-btn" type="button" data-reset-form="chemistry-form" data-report-target="chemistry-report" data-pro-target="chemistry-pro">Reset</button>
+            </div>
+          </form>
+          <div class="report-card empty" id="chemistry-report">Add player profiles to evaluate team chemistry.</div>
+          <div class="pro-extra" id="chemistry-pro"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="disclaimer-section reveal">
+      <div class="container card">
+        <h2>Important Disclaimer</h2>
+        <p>2K IQ Lab is an independent educational toolkit. Not affiliated with 2K, NBA 2K, or Take-Two Interactive. All outputs are estimates generated from user-provided inputs and heuristics, and should be used as guidance rather than guaranteed outcomes.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p><strong>2K IQ Lab</strong></p>
+        <p>Sharper reads. Better decisions. Fewer bad runs.</p>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/pages/about.html">About</a>
+        <a href="/pages/contact.html">Contact</a>
+        <a href="/pages/privacy.html">Privacy</a>
+        <a href="/pages/terms.html">Terms</a>
+        <a href="/pages/faq.html">FAQ</a>
+      </nav>
+    </div>
+    <div class="container">
+      <div class="ad-slot" aria-label="Ad slot in footer">Ad slot (Google AdSense placement)</div>
+      <p class="copyright">© <span id="year"></span> 2K IQ Lab. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="pro-modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal="true"></div>
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="pro-modal-title">
+      <button class="close-modal" type="button" data-close-modal="true" aria-label="Close">×</button>
+      <h2 id="pro-modal-title">Unlock 2K IQ Lab Pro</h2>
+      <p class="price">$2.99<span>/month</span></p>
+      <ul>
+        <li>Ad-free experience</li>
+        <li>Advanced report details + routines</li>
+        <li>Image export and enhanced share links</li>
+        <li>Save/compare optimization profiles</li>
+      </ul>
+      <a class="primary-btn" id="stripe-pay-link" href="https://buy.stripe.com/eVqaEZ768eFggv3e5NcbC03" target="_blank" rel="noopener noreferrer">Pay with Stripe</a>
+      <button class="secondary-btn" id="manual-unlock-btn" type="button">I’ve Paid — Unlock Pro</button>
+      <p class="tiny-note">This unlock is stored locally on this device/browser. No server-side subscription verification is used in this static build.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="/assets/app.js" defer></script>
+</body>
+</html>
