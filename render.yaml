@@ -2,7 +2,6 @@ services:
   - type: web
     name: 2k-iq-lab
     runtime: static
-    plan: free
     branch: main
     autoDeploy: true
     buildCommand: "echo 'No build step required'"
